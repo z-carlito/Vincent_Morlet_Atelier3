@@ -9,20 +9,20 @@ namespace atelierTroisLib
     {
         private ITotal initialPoints;
 
-        public ITotal InitialPoints
+        public virtual ITotal InitialPoints
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get { return initialPoints; }
+            set { initialPoints = value; }
         }
 
-        public ITotal GetPointsFromMatch(Match m, bool isHome)
+
+        public virtual ITotal GetPointsFromMatch(Match m, bool isHome)
         {
-            throw new System.NotImplementedException();
+
+            ITotal result = null;
+            result.Increment(isHome ? m.HomeGoals : m.AwayGoals);
+
+            return result;
         }
 
         public interface ITotal : IComparable
@@ -30,6 +30,8 @@ namespace atelierTroisLib
             void Increment(ITotal width);
             String ToString();
 
+
+            void Increment(int p);
         }
     }
 

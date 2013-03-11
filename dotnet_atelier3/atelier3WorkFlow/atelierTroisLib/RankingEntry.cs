@@ -12,7 +12,13 @@ namespace atelierTroisLib
     
         public int CompareTo(object obj)
         {
-            throw new NotImplementedException();
+            if (obj == null) return 1;
+
+            var objRankingEntry = obj as RankingEntry;
+            if (objRankingEntry != null)
+                return this.points.CompareTo(objRankingEntry.points);
+            else
+                throw new ArgumentException("Object is not a RankingEntry");
         }
     }
 }

@@ -20,15 +20,18 @@ namespace TestProject
             {
                 this.points += ((TotalMock)with).points;
             }
+
+            public void Increment(int p)
+            {
+                p += points;
+            }
+
             public int CompareTo(object obj)
             {
                 return this.points - ((TotalMock)obj).points;
             }
 
-            public void Incremenent(ITotal width)
-            {
-                throw new System.NotImplementedException();
-            }
+       
         }
         public override ITotal InitialPoints
         {

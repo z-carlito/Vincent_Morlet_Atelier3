@@ -7,16 +7,16 @@ namespace atelierTroisLib
 {
     public class Club
     {
-        private string name;
+        private readonly string name;
 
         public Club(string name)
         {
-            throw new System.NotImplementedException();
+            this.name = name;
         }
 
-        public string ToString()
+        public new string ToString()
         {
-            throw new System.NotImplementedException();
+            return "name :" + this.name;
         }
     }
 }

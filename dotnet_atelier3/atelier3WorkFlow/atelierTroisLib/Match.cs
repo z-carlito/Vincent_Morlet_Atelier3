@@ -18,7 +18,7 @@ namespace atelierTroisLib
     
         public Match()
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public int HomeGoals
